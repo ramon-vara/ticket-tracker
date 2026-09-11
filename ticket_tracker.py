@@ -27,3 +27,13 @@ def view_tickets(tickets):
         print(ticket["status"])
 
 view_tickets(tickets)
+
+def close_ticket(tickets, ticket_id):
+    """Change a ticket's status to Closed by matching its id."""
+    for ticket in tickets:
+        if ticket["id"] == ticket_id:
+            ticket["status"] = "Closed"
+        return tickets
+
+close_ticket(tickets, 1)
+view_tickets(tickets)
