@@ -15,9 +15,6 @@ def add_ticket(tickets):
     tickets.append(ticket)
     return tickets
 
-tickets = add_ticket(tickets)
-print(tickets)
-
 def view_tickets(tickets):
     """Print all tickets in readable format."""
     for ticket in tickets:
@@ -26,8 +23,6 @@ def view_tickets(tickets):
         print(ticket["priority"])
         print(ticket["status"])
 
-view_tickets(tickets)
-
 def close_ticket(tickets, ticket_id):
     """Change a ticket's status to Closed by matching its id."""
     for ticket in tickets:
@@ -35,5 +30,21 @@ def close_ticket(tickets, ticket_id):
             ticket["status"] = "Closed"
         return tickets
 
-close_ticket(tickets, 1)
-view_tickets(tickets)
+while True:
+    print("\n1. Add tickets")
+    print("2. View tickets")
+    print("3. Closes tickets")
+    print("4. Exit")
+    choice = input("Choose an option: ")
+
+    if choice == "1":
+        tickets = add_ticket(tickets)
+    elif choice == "2":
+        view_tickets(tickets)
+    elif choice == "3":
+        ticket_id = int(input("Enter ticket ID to close: "))
+    elif choice == "4":
+        break
+
+
+
