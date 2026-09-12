@@ -13,4 +13,5 @@ Command-line ticket tracker built with Python — practicing dictionaries, loops
 
 ## How to Run
 ```bash
-run ticket_tracker.py
+python3 ticket_tracker.py
+```
